@@ -91,14 +91,11 @@ def train():
             optimizer2.zero_grad()
 
             output1 = model(input1)
-
             output2 = model(input2)
-
             output = output_layer(output1, output2)
             preds = torch.argmax(output, dim=1)
-
             loss = loss_fn(output, labels)
-
+            
             loss.backward()
             optimizer.step()
             optimizer2.step()
@@ -118,7 +115,6 @@ def train():
 
             preds = torch.argmax(output, dim=1)
             loss = loss_fn(output, labels)
-
             val_loss += loss.item()
             val_acc += torch.sum(preds == labels.data).float()
 
