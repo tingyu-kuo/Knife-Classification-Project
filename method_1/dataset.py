@@ -23,26 +23,30 @@ class ImageDataset(Dataset):
         return image1, image2, self.y[index]
 
 
-def data():
+def data(base):
     parent_path = os.path.abspath("..")
     data_root = os.path.join(parent_path, 'WearDepthMap_0308')
     data_root = Path(data_root)
-    classes = ['broken', 'rough', 'pre', 'new']
+    if base == 'broken':
+        classes = ['broken', 'rough', 'pre', 'new']
+    elif base == 'new':
+        classes = ['new', 'pre', 'rough', 'broken']
     img_1, img_2, label = [], [], []
 
-    for i, broken_img in enumerate(os.listdir(data_root/'broken')):
+    for i, broken_img in enumerate(os.listdir(data_root/base)):
         for j, class_name in enumerate(classes):
             folder_root = data_root / class_name
             all_img = os.listdir(folder_root)
-            if class_name == 'broken':
+            if class_name == base:
                 for k in range(i+1, len(all_img)):
-                    img_1.append(data_root/'broken'/broken_img)
-                    img_2.append(data_root/'broken'/all_img[k])
+                    img_1.append(data_root/base/broken_img)
+                    img_2.append(data_root/base/all_img[k])
                     label.append(j)
             else:
                 for k in range(len(all_img)):
-                    img_1.append(data_root/'broken'/broken_img)
+                    img_1.append(data_root/base/broken_img)
                     img_2.append(data_root/class_name/all_img[k])
                     label.append(j)
 
     return img_1, img_2, label
+
