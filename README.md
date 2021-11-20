@@ -18,4 +18,5 @@
 ### 刀具拓樸深度圖3D:
 <img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/depth_3d.PNG" width="500"/><br/>
 ### 刀具拓樸深度圖3D(隨機採樣 & Resize):
+#### 將原先拓樸圖1000x1000調整為100x100，且因隨機性，每次執行結果都會有些微不同，達到擴增的目的
 <img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/depth_random.PNG" width="500"/><br/>
