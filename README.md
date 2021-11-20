@@ -8,7 +8,7 @@
 	Q1. 因資料量不足，做普通的擴增方法易破壞拓樸圖中的物理特性。  
 		&emsp;Ans. 將拓樸圖以點雲的方式呈現，較容易進行擴增。  
 	Q2. 因拓樸圖大小為1000x1000，即點的個數有100萬，現有硬體不易實現。  
-		&emsp;Ans. 利用random sample的方式，由每個sliding windows中，  
-		隨機取出top n的數值，n為可調參數，不僅能減少點的數量，也能由隨機性來進行擴增。  
+		&emsp;Ans. 利用random sample的方式，由每個sliding windows中，隨機取出top n的數值，  
+		&emsp;&emsp;n為可調參數，不僅能減少點的數量，也能由隨機性來進行擴增。  
 	ToDo: 再配合3D空間旋轉進行資料擴增，以Pointnet++等相關模型來做分類測試。
 </br>
