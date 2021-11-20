@@ -12,3 +12,10 @@
 		&emsp;&emsp;&emsp;n為可調參數，不僅能減少點的數量，也能由隨機性來進行擴增。  
 	ToDo: 再配合3D空間旋轉進行資料擴增，以Pointnet++等相關模型來做分類測試。
 </br>
+### 刀具拓樸圖(2D & 3D):
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/plot_2d.PNG" width="500"/><br/>
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/plot_3d.PNG" width="500"/><br/>
+### 刀具拓樸深度圖3D:
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/depth_3d.PNG" width="500"/><br/>
+### 刀具拓樸深度圖3D(隨機採樣 & Resize):
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/depth_random.PNG" width="500"/><br/>
