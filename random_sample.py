@@ -3,7 +3,7 @@ from PIL import Image
 from pathlib import Path
 import random
 from matplotlib import pyplot as plt
-from load_images import plot_3d, plot_2d
+
 
 
 class Random_Sample():
@@ -16,7 +16,7 @@ class Random_Sample():
         self.top = top
         new_array = np.array([])
         new_size = [int((h-k)/s)+1, int((h-k)/s)+1]
-
+        # raise error
         if s > k:
             raise BaseException('expected " kernal_size > stride " but got " kernal_size < stride " instead.')
         if (h-k)%s != 0:
@@ -33,13 +33,13 @@ class Random_Sample():
 
     def random_sample(self, array):
         tmp = array.copy()
-        top_num = random.randrange(self.top)
-        for _ in range(top_num-1):
-            # set top1 to 0 and pick top2
-            max_pos = np.unravel_index(np.argmax(tmp, axis=None), tmp.shape)
-            tmp[max_pos] = 0
-        max_value = np.max(tmp)
-        return int(max_value)
+        n = random.randrange(self.top)
+        h, w = tmp.shape
+        tmp = np.reshape(tmp, [h*w,])
+        # sort and pick top-n as the output value
+        sort_tmp = np.sort(tmp)[::-1]
+        out_value = sort_tmp[n-1]
+        return int(out_value)
 
 def plot_3d(img):
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
@@ -63,9 +63,9 @@ def plot_3d(img):
 
 if __name__ == '__main__':
     rs = Random_Sample()
-    data = Image.open(Path('data', 'Batch1', 'B', '1', 'LWearDepthRaw.Tif'))
-    plot_2d(np.array(data))
-    new = rs.random_maxpool(data, kernal_size=10, stride=10, top=5)
-    # plot_3d(new)
-    plot_2d(new)
+    data = np.array(Image.open(Path('data', 'Batch1', 'B', '1', 'LWearDepthRaw.Tif')))
+    plot_3d(data)
+
+    new = rs.random_maxpool(data, kernal_size=10, stride=10, top=20)
+    plot_3d(new)
 
