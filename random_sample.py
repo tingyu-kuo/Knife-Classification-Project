@@ -5,7 +5,6 @@ import random
 from matplotlib import pyplot as plt
 
 
-
 class Random_Sample():
     def __init__(self):
         pass
@@ -62,10 +61,17 @@ def plot_3d(img):
 
 
 if __name__ == '__main__':
+
     rs = Random_Sample()
     data = np.array(Image.open(Path('data', 'Batch1', 'B', '1', 'LWearDepthRaw.Tif')))
     plot_3d(data)
 
     new = rs.random_maxpool(data, kernal_size=10, stride=10, top=20)
     plot_3d(new)
+    
+    
+    
+    
+    
+    
 
