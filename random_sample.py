@@ -37,8 +37,8 @@ class Random_Sample():
         h, w = tmp.shape
         tmp = np.reshape(tmp, [h*w,])
         # sort and pick top-n as the output value
-        sort_tmp = np.sort(tmp)[::-1]
-        out_value = sort_tmp[n-1]
+        tmp = np.sort(tmp)
+        out_value = tmp[-n]
         return int(out_value)
 
 def plot_3d(img):
