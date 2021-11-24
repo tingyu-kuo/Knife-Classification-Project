@@ -20,3 +20,16 @@
 ### 刀具拓樸深度圖3D(隨機採樣 & Resize):
 #### 將原先拓樸圖1000x1000調整為100x100，且因隨機性，每次執行結果都會有些微不同，達到擴增的目的
 <img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/depth_random.PNG" width="500"/><br/>
+
+
+### Testing Model Performance on Another Dataset 
+#### Main Architecture
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/figure1.PNG" width="500"/><br/>
+#### DACL Attention Method
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/figure2.PNG" width="500"/><br/>
+#### Self-attention Method
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/figure3.PNG" width="500"/><br/>
+#### Compare the Result Between Two Methods and Baseline
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/table1.PNG" width="500"/><br/>
+#### Confusion metrices of Two Methods and Baseline
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/images/figure4.PNG" width="500"/><br/>
