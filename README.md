@@ -1,4 +1,5 @@
 ## Knife-Classification-Project
+<img src="https://github.com/tingyu-kuo/Knife-Classification-Project/blob/main/paper/automation2021發表證明.PNG" width="500"/><br/>
 
 計畫名稱: 基於深度學習的刀具分類與分析  
 計畫編號: MOST 108-2221-E-194-057-MY3  
